@@ -1,0 +1,2 @@
+/Users/sam/dev/graphics/PA1.RayCasting/student-code/build/CMakeFiles/PA1.dir
+/Users/sam/dev/graphics/PA1.RayCasting/student-code/build/deps/vecmath/CMakeFiles/vecmath.dir

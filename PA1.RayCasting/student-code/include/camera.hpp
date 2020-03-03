@@ -42,13 +42,29 @@ class PerspectiveCamera : public Camera {
 
 public:
     PerspectiveCamera(const Vector3f &center, const Vector3f &direction,
-            const Vector3f &up, int imgW, int imgH, float angle) : Camera(center, direction, up, imgW, imgH) {
+            const Vector3f &up, int imgW, int imgH, float angle) : Camera(center, direction, up, imgW, imgH) ,fov(angle){
         // angle is in radian.
+        float half_height = tan(fov / 2);
+        float half_width = half_height;
+        lower_left_corner = center
+        +direction 
+        -half_height*up
+        -half_width*horizontal;
+        filmHeight = 2 * half_height * up;
+        filmWidth = 2 * half_width * horizontal;
     }
 
     Ray generateRay(const Vector2f &point) override {
-        // 
+        return Ray(center, lower_left_corner + point.x()/width * filmWidth + point.y()/height * filmHeight - center);
     }
+
+    protected:
+        float fov;  // field of view, vertical, in radian.
+
+        private:
+            Vector3f lower_left_corner;
+            Vector3f filmWidth;
+            Vector3f filmHeight;
 };
 
 #endif //CAMERA_H
