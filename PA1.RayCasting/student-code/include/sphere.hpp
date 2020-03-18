@@ -13,7 +13,7 @@ public:
         // unit ball at the center
     }
 
-    Sphere(const Vector3f &center, float radius, Material *material) : Object3D(material) {
+    Sphere(const Vector3f &center, float radius, Material *material) : Object3D(material) ,center(center), radius(radius){
         // 
     }
 
@@ -21,25 +21,21 @@ public:
 
     bool intersect(const Ray &r, Hit &h, float tmin) override {
         Vector3f oc = r.getOrigin() - center;
-        double a = Vector3f::dot(r.getDirection(), r.getDirection());
-        double b = Vector3f::dot(oc, r.getDirection());
-        double c = Vector3f::dot(oc, oc) - radius * radius;
-        double discriminant = b * b - a * c;
+        float a = Vector3f::dot(r.getDirection(), r.getDirection());
+        float b = Vector3f::dot(oc, r.getDirection());
+        float c = Vector3f::dot(oc, oc) - radius * radius;
+        float discriminant = b * b - a * c;
         if (discriminant > 0) {
-            double temp = (-b - sqrt(discriminant)) / a;
-            if (temp < MAXFLOAT && temp > tmin) {
-                // rec.t = temp;
-                // rec.p = r.point_at_parameter(rec.t);
-                // rec.normal = (rec.p - center) / radius;
-                // rec.mat_ptr = mat_ptr;
+            float temp = (-b - sqrt(discriminant)) / a;
+            if (temp < h.getT() && temp > tmin) {
+                auto normal = (r.pointAtParameter(temp)-center)/radius;
+                h.set(temp,material, normal) ;
                 return true;
             }
             temp = (-b + sqrt(discriminant)) / a;
-            if (temp < MAXFLOAT && temp > tmin) {
-                // rec.t = temp;
-                // rec.p = r.point_at_parameter(rec.t);
-                // rec.normal = (rec.p - center) / radius;
-                // rec.mat_ptr = mat_ptr;
+            if (temp < h.getT() && temp > tmin) {
+                auto normal = (r.pointAtParameter(temp)-center)/radius;
+                h.set(temp,material, normal) ;
                 return true;
             }
         }
