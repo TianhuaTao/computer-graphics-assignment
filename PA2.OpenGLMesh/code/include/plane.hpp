@@ -13,7 +13,7 @@ public:
 
     }
 
-    Plane(const Vector3f &normal, float d, Material *m) : Object3D(m) {
+    Plane(const Vector3f &normal, float d, Material *m) : Object3D(m) ,offset(d), norm(normal.normalized()){
 
     }
 
@@ -24,6 +24,7 @@ public:
     }
 
     void drawGL() override {
+        float d = offset;
         Object3D::drawGL();
         Vector3f xAxis = Vector3f::RIGHT;
         Vector3f yAxis = Vector3f::cross(norm, xAxis);
@@ -43,7 +44,7 @@ public:
 
 protected:
     Vector3f norm;
-    float d;
+    float offset;
 
 };
 

@@ -1,6 +1,0 @@
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/CMakeFiles/rebuild_cache.dir
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/CMakeFiles/edit_cache.dir
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/CMakeFiles/PA2.dir
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/deps/vecmath/CMakeFiles/rebuild_cache.dir
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/deps/vecmath/CMakeFiles/edit_cache.dir
-/Users/sam/Downloads/PA2.OpenGLMesh/code/build/deps/vecmath/CMakeFiles/vecmath.dir

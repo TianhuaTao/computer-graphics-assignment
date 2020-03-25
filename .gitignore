@@ -4,6 +4,8 @@ PA1.RayCasting/student-code/.idea/
 PA1.RayCasting/student-code/build/
 PA1.RayCasting/student-code/cmake-build-debug/
 PA1.RayCasting/student-code/bin/
-
-
+.vscode
+PA2.OpenGLMesh/code/bin/
+PA2.OpenGLMesh/code/build/
+PA2.OpenGLMesh/code/bin/cmake-build-debug/
 

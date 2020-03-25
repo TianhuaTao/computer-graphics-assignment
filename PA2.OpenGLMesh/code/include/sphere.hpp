@@ -10,11 +10,11 @@
 
 class Sphere : public Object3D {
 public:
-    Sphere() {
+    Sphere():center(Vector3f::ZERO), radius(1) {
         // unit ball at the center
     }
 
-    Sphere(const Vector3f &center, float radius, Material *material) : Object3D(material) {
+    Sphere(const Vector3f &center, float radius, Material *material) : Object3D(material),center(center), radius(radius) {
         //
     }
 
