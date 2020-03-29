@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// TODO (PA2): Copy from PA1
+//  (PA2): Copy from PA1
 class Triangle: public Object3D
 {
 

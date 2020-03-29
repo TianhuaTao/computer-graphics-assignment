@@ -28,7 +28,7 @@ void screenCapture() {
     Image openglImg(imgW, imgH);
     auto *pixels = new unsigned char[3 * imgW * imgH];
     glPixelStorei(GL_PACK_ALIGNMENT, 1);
-    glReadBuffer(GL_FRONT);
+    // glReadBuffer(GL_FRONT);
     glReadPixels(0, 0, imgW, imgH, GL_RGB, GL_UNSIGNED_BYTE, pixels);
     for (int x = 0; x < imgW; ++x) {
         for (int y = 0; y < imgH; ++y) {
@@ -91,13 +91,13 @@ void drawScene() {
     // Setup MODELVIEW Matrix
     sceneParser->getCamera()->setupGLMatrix();
 
-    // TODO (PA2): Turn On all lights.
+    //  (PA2): Turn On all lights.
     for (int li = 0; li < sceneParser->getNumLights(); li++)
     {
         Light *light = sceneParser->getLight(li);
         light->turnOn(li);
     }
-    // TODO (PA2): Draw elements.
+    //  (PA2): Draw elements.
     Group* baseGroup = sceneParser->getGroup();
     baseGroup->drawGL();
 

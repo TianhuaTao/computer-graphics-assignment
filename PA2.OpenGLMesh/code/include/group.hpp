@@ -9,7 +9,7 @@
 #include <vector>
 #include <list>
 
-// TODO (PA2): Implement Group - copy from PA1
+//  (PA2): Implement Group - copy from PA1
 class Group : public Object3D {
 
 public:

@@ -9,7 +9,7 @@
 #include <iostream>
 #include <gl.h>
 
-// TODO (PA2): Copy from PA1.
+//  (PA2): Copy from PA1.
 class Material {
 public:
 

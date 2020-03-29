@@ -6,7 +6,7 @@
 #include <cmath>
 #include <glut.h>
 
-// TODO (PA2): Copy from PA1
+//  (PA2): Copy from PA1
 
 class Sphere : public Object3D {
 public:

@@ -5,7 +5,7 @@
 #include <vecmath.h>
 #include <cmath>
 
-// TODO (PA2): Copy from PA1
+//  (PA2): Copy from PA1
 
 class Plane : public Object3D {
 public:
