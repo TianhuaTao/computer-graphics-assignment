@@ -28,7 +28,7 @@ void screenCapture() {
     Image openglImg(imgW, imgH);
     auto *pixels = new unsigned char[3 * imgW * imgH];
     glPixelStorei(GL_PACK_ALIGNMENT, 1);
-    glReadBuffer(GL_FRONT);
+    // glReadBuffer(GL_FRONT);
     glReadPixels(0, 0, imgW, imgH, GL_RGB, GL_UNSIGNED_BYTE, pixels);
     for (int x = 0; x < imgW; ++x) {
         for (int y = 0; y < imgH; ++y) {
@@ -102,7 +102,7 @@ void drawScene() {
     baseGroup->drawGL();
 
     // Dump the image to the screen.
-    glutSwapBuffers();
+    // glutSwapBuffers();
 
     // Save if not in interactive mode.
     if (!savePicturePath.empty()) {
