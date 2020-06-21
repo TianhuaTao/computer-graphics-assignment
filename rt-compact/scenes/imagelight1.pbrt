@@ -1,0 +1,28 @@
+LookAt 6 3 -1.5  # eye
+       0 0 0  # look at point
+       0 0 1    # up vector
+Camera "perspective" "float fov" 80
+
+Sampler "random" "integer pixelsamples" [1024]
+Integrator "path"
+
+Film "image" "string filename" "imagelight1.pfm"
+     "integer xresolution" [2000] "integer yresolution" [1000]
+
+WorldBegin
+
+
+LightSource "infinite"
+"string mapname" "imagelight1.pfm"
+
+#LightSource "distant"  "point from" [ -30 40  100 ]
+
+
+AttributeBegin
+  Material "glass"
+  Shape "sphere" "float radius" 2.5
+AttributeEnd
+
+
+
+WorldEnd
